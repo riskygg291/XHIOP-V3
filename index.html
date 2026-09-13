@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XHIOP V3 - Minecraft Addons</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>XHIOP <span class="version">V3</span></h1>
+            </div>
+            <p class="tagline">Premium Minecraft Addons Collection</p>
+        </header>
+
+        <!-- Addons Grid -->
+        <main class="addons-container">
+            <div id="addons-grid" class="addons-grid">
+                <!-- Addons will be loaded here dynamically -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading addons...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button id="upload-btn" class="fab" title="Upload Addon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+    </button>
+
+    <!-- Upload Modal -->
+    <div id="upload-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Upload New Addon</h2>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+            <form id="upload-form" class="upload-form">
+                <div class="form-group">
+                    <label for="addon-name">Addon Name</label>
+                    <input type="text" id="addon-name" required placeholder="Enter addon name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="addon-description">Description</label>
+                    <textarea id="addon-description" required rows="4" placeholder="Describe your addon"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="addon-version">Minecraft Version</label>
+                    <input type="text" id="addon-version" required placeholder="e.g., 1.20.1">
+                </div>
+                
+                <div class="form-group">
+                    <label for="addon-download">Download Link</label>
+                    <input type="url" id="addon-download" required placeholder="https://...">
+                </div>
+                
+                <div class="form-group">
+                    <label for="addon-image">Addon Image URL</label>
+                    <input type="url" id="addon-image" placeholder="https://... (optional)">
+                </div>
+                
+                <button type="submit" class="submit-btn">Upload Addon</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
